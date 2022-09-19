@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoMaya | Collective</title>
+
+  <link rel="stylesheet" href="/assets/styles/main.css">
+</head>
+
+<body>
+  <header>
+    <a onclick="scrollToTop()" href="#" title="MoMaya - Collective" class="momaya" cursor-class="arrow">
+      <img src="/assets/images/logo/momaya_sticker.svg" class="logo">
+    </a>
+    <a href="" class="menu" id="js-menuButton">
+      <div class="row plain"></div>
+      <div class="row group">
+        <div class="part"></div>
+        <div class="part"></div>
+      </div>
+      <div class="row plain"></div>
+    </a>
+  </header>
+
+  <nav>
+    <ul class="sections">
+      <li>
+        <a onclick="goToWork()">Work</a>
+      </li>
+      <li>
+        <a title="About us">About</a>
+      </li>
+      <li>
+        <a title="Contact us">Contact</a>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="socialLinks">
+    <a href="" title="MoMaya Instagram" target="_blank" rel="noopener noreferrer">
+      <lottie-player src="assets/lottie/instagram.json" background="transparent"
+        speed="2" hover>
+      </lottie-player>
+    </a>
+    <a href="" title="MoMaya Behance" target="_blank" rel="noopener noreferrer">
+      <lottie-player src="assets/lottie/behance.json" background="transparent"
+      speed="2" hover>
+    </lottie-player>
+    <!-- <img src="/assets/images/social/behance.svg" alt="MoMaya Behance"> -->
+  </a>
+  <a href="" title="MoMaya LinkedIn" target="_blank" rel="noopener noreferrer">
+      <lottie-player src="assets/lottie/vimeo.json" background="transparent"
+        speed="2" hover>
+      </lottie-player>
+      <!-- <img src="/assets/images/social/linkedin.svg" alt="MoMaya LinkedIn"> -->
+    </a>
+  </div>
+  <div class="pages">
+    <section class="page">
+      <div class="hero">
+        <canvas id="canvas3d"></canvas>
+        <div class="mouseIcon"></div>
+        <!-- <iframe src='https://my.spline.design/momaya3d-45bb1bebc4e95adaad42c9197e003488/' frameborder='0' width='100%' height='100%'></iframe> -->
+      </div>
+    </section>
+    <section class="page">
+      <div class="welcomeToGax blur">
+        <div class="weCreate" id="wecreate">
+          <div id="js-weCreate" class="weare">
+            <div class="wearetext">
+              <lottie-player src="/assets/lottie/weare" background="transparent" speed="0.75" autoplay>
+              </lottie-player>
+            </div>
+            <!-- <div class="vr_man">
+              <lottie-player src="https://assets4.lottiefiles.com/packages/lf20_g3dzz0wz.json" background="transparent"
+                speed="1" loop autoplay>
+              </lottie-player>
+            </div> -->
+          </div>
+          <div class="arrows">
+            <div class="arrowleft" cursor-class="arrow" id="arrowleft"></div>
+            <div class="arrowright" cursor-class="arrow" id="arrowright"></div>
+          </div>
+          <div class="wefoot1">
+            <p id="wefoot1">WE CREATE</p>
+          </div>
+          <div class="wecreatefoot">
+            <div class="wefoot2">Animation & Live Action VFX Video PRoduction for Film and Digital Content.</div>
+          </div>
+        </div>
+    </section>
+    <section class="page">
+      <div class="projects" id="work">
+        <div id="js-projectsBox" class="projectsBox">
+          <div class="carousel">
+            <div id="leftProject" class="projectArrow left" cursor-class="arrow"></div>
+            <div id="rightProject" class="projectArrow right" cursor-class="arrow"></div>
+            <ul class="carousel__list">
+              <li class="carousel__item" data-pos="-2">1</li>
+              <li class="carousel__item" data-pos="-1">2</li>
+              <li class="carousel__item" data-pos="0">3</li>
+              <li class="carousel__item" data-pos="1">4</li>
+              <li class="carousel__item" data-pos="2">5</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="page">
+      <div class="fullpagefooter blur" id="main_footer">
+        <div class="footer">
+          <h5>
+            prashant@momaya.com
+          </h5>
+        </div>
+        <div class="localisation nullIcon"></div>
+        <div class="taglineParent">
+          <div class="taglineBlock">
+            <div class="row">
+              <span>Let's</span>
+            </div>
+            <div class="row">
+              <span>Create</span>
+            </div>
+          </div>
+        </div>
+        <div class="contactZone">
+          <a href="" class="startButton">
+              Start
+              <div class="mousePointer"></div>
+          </a>
+        </div>
+        <div class="web_man">
+          <lottie-player src="https://assets1.lottiefiles.com/packages/lf20_toofqbxc.json" background="transparent"
+            speed="1" loop autoplay>
+          </lottie-player>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <ul class="pagination" style="opacity:0;">
+  </ul>
+
+
+  <script src="/assets/scripts/main.js"></script>
+  <script src="/assets/scripts/navigator.js"></script>
+  <script src="/assets/scripts/projects.js"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <script type="module">
+    import { Application } from '/assets/scripts/spline.js';
+    const canvas = document.getElementById('canvas3d');
+    const app = new Application(canvas);
+    app.load('/assets/spline/scene2.splinecode');
+  </script>
+
+  </script>
+</body>
+
+</html>
