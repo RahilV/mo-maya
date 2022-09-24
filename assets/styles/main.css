@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
 * {
     padding: 0;
     margin: 0;
@@ -213,10 +215,43 @@ nav .navFooter img.logo {
     z-index: 100;
 }
 
+.socialLinksFooter{
+    display: flex;
+    align-items: start;
+    position: fixed;
+    justify-content: start;
+    width: 100vh;
+    left: 0;
+    z-index: 100;
+}
+
 .socialLinks a {
     padding: 6px;
     margin: 6px 6px;
     width: 50px;
+}
+
+.fallanimation{
+    animation: fallanim 1s forwards;
+}
+
+.raiseanimation{
+    animation: raiseanim 1s forwards;
+}
+@keyframes fallanim {
+    100%{
+        transform: translate3d(0, 200px, 0) rotate3d(0, 0, 1, -90deg);
+        opacity: 0;
+    }
+}
+@keyframes raiseanim {
+    0%{
+        transform: translate3d(0, 200px, 0) rotate3d(0, 0, 1, -90deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
 }
 
 .socialLinks a img {
@@ -225,14 +260,31 @@ nav .navFooter img.logo {
     transition: transform .3s cubic-bezier(.48, -.07, .52, 1.79);
 }
 
-.socialLinks a:hover img,
-body.about section.whoWeAre .person .description .links a:hover img,
-body.about section.whoWeAre .studio .description .links a:hover img,
-body.home section.whoWeAre .person .description .links a:hover img,
-body.home section.whoWeAre .studio .description .links a:hover img {
-    transform: translateY(-4px);
+.socialLinksFooter a {
+    padding: 6px;
+    margin: 6px 6px;
+    width: 50px;
 }
 
+.socialLinksFooter a img {
+    height: 20px;
+    will-change: transform;
+    transition: transform .3s cubic-bezier(.48, -.07, .52, 1.79);
+}
+
+.footersocialanim{
+    animation: addicon 1s forwards;
+}
+
+@keyframes addicon {
+    0%{
+        transform: translate3d(0, 200px, 0) rotate3d(0, 0, 0, 0deg);
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
 
 .pages {
     height: 100%;
@@ -340,8 +392,10 @@ div.welcomeToGax .weCreate {
 
 .web_man {
     position: fixed;
-    height: 70vh;
-    right: 55%;
+    height: 65vh;
+    right: 65%;
+    top: 34%;
+    z-index: -1;
 }
 
 .wearetext {
@@ -349,6 +403,27 @@ div.welcomeToGax .weCreate {
     height: 60vh;
     left: 10%;
     bottom: 30%;
+}
+
+.showtype{
+    animation: typeanim 1s forwards;
+}
+.hidetype{
+    animation: hidetypeanim 1s forwards;
+}
+
+@keyframes typeanim {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
+}
+@keyframes hidetypeanim {
+    100%{
+        transform: scale(0);
+    }
 }
 
 .wecreatefoot{
@@ -379,17 +454,16 @@ div.welcomeToGax .weCreate {
 }
 
 @keyframes scrollanim {
+    0%{
+        padding-bottom: 2vh;
+        font-size: 5vh;
+    }
     100% {
         padding-bottom: 67vh;
         font-size: 6vh;
     }
 }
 
-@keyframes arrowleftanim {
-    50%{
-        padding-bottom: 47vh;
-    }
-}
 @keyframes scrollbackanim {
     0% {
         padding-bottom: 67vh;
@@ -475,23 +549,147 @@ div.projects .projectsHeader h4::after {
     /* background: linear-gradient(to right, rgba(9, 9, 11, 0) 0, #09090b4d 100%); */
 }
 
+.projarrowanim{
+    animation: projectanimation 1.2s forwards;
+}
+.projarrowunanim{
+    animation: projectunanimation 1s forwards;
+}
+
+@keyframes projectanimation {
+    0%{
+        opacity: 0;
+    }
+    90%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes projectunanimation {
+    1%{
+        opacity: 0;
+    }
+}
+
 .arrowright {
-    position: absolute;
+    position: fixed;
     width:100%;
     height:7vh;
     left:9vw;
     background: url(/assets/images/icons/arrow.svg) no-repeat center;
+    animation: pulseright 2s linear infinite;
+}
+
+@keyframes pulseright {
+    0% { transform: translate(1px) }
+    10% { transform: translate(-1px)  }
+    20% { transform: translate(-3px)  }
+    30% { transform: translate(3px)  }
+    40% { transform: translate(1px)  }
+    50% { transform: translate(-1px)  }
+    60% { transform: translate(-3px)  }
+    70% { transform: translate(3px)  }
+    80% { transform: translate(-1px)  }
+    90% { transform: translate(1px)  }
+    100% { transform: translate(1px)  }
+
 }
 
 .arrowleft {
-    position: absolute;
+    position: fixed;
     width:100%;
     height:7vh;
     right:9vw;
     background: url(/assets/images/icons/arrow.svg) no-repeat center;
     transform: rotate(180deg);
+    animation: pulseleft 2s linear infinite;
 }
 
+@keyframes pulseleft {
+    0% { transform: translate(-1px)   rotate(180deg)}
+    10% { transform: translate(1px) rotate(180deg) }
+    20% { transform: translate(3px) rotate(180deg) }
+    30% { transform: translate(-3px)  rotate(180deg)}
+    40% { transform: translate(-1px)  rotate(180deg)}
+    50% { transform: translate(1px) rotate(180deg) }
+    60% { transform: translate(3px) rotate(180deg) }
+    70% { transform: translate(-3px)  rotate(180deg)}
+    80% { transform: translate(1px) rotate(180deg) }
+    90% { transform: translate(-1px)  rotate(180deg)}
+    100% { transform: translate(-1px) rotate(180deg) }
+
+}
+
+.arrowleftanimate{
+    animation: arrowleftanim 1s forwards;
+}
+.arrowleftunanimate{
+    animation: arrowleftunanim 1s forwards;
+}
+.arrowrightanimate{
+    animation: arrowrightanim 1s forwards;
+}
+.arrowrightunanimate{
+    animation: arrowrightunanim 1s forwards;
+}
+
+@keyframes arrowleftanim {
+    0%{
+        margin-top: 0;
+    }
+    50%{
+        margin-top: 38vh;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        margin-top: 34vh;
+        margin-right: 38vw;
+        opacity: 0;
+    }
+}
+
+@keyframes arrowleftunanim {
+    0%{
+        margin-top: 38vh;
+        margin-right: 36vw;
+    }
+    100%{
+        margin-top: 0;
+    }
+}
+
+@keyframes arrowrightanim {
+    0%{
+        margin-top: 0;
+    }
+    50%{
+        margin-top: 38vh;
+    }
+    99%{
+        opacity: 1;
+    }
+    100%{
+        margin-top: 34vh;
+        margin-left: 38vw;
+        opacity: 0;
+    }
+}
+
+@keyframes arrowrightunanim {
+    0%{
+        margin-top: 38vh;
+        margin-left: 36vw;
+    }
+    100%{
+        margin-top: 0;
+        opacity: 1;
+    }
+}
 
 .projectArrow::after {
     content: '';
@@ -536,7 +734,20 @@ div.projects .projectsHeader h4::after {
     width: 100%;
     height: 40vh;
     justify-content: center;
-    perspective: 300px;
+    perspective: 300px; 
+}
+
+.projactive{
+    animation: projlistanim 1s forwards;
+}
+
+@keyframes projlistanim {
+    0%{
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1);
+    }
 }
 
 .carousel__item {
@@ -615,7 +826,7 @@ div.fullpagefooter {
     height: 100vh;
     width: 100vw;
     display: flex;
-    align-items: center;
+    /* align-items: center; */
     justify-content: center;
 }
 
@@ -627,6 +838,8 @@ div.fullpagefooter .taglineParent {
 div.fullpagefooter .taglineParent .taglineBlock {
     font-size: 12vw;
     z-index: 3;
+    font-weight: 800;
+    margin-top: 10%;
 }
 
 div.fullpagefooter .footer {
@@ -636,7 +849,7 @@ div.fullpagefooter .footer {
     justify-content: center;
     bottom: 0;
     width: 100%;
-    height: 5vh;
+    height: 7vh;
     background-color: rgb(255, 255, 255);
     color:#000000;
 }
@@ -656,7 +869,7 @@ div.fullpagefooter .footer {
 
 div.fullpagefooter a.startButton {
     position: absolute;
-    right: 160px;
+    right: 35vh;
     top: 240px;
 }
 
@@ -666,7 +879,7 @@ div.fullpagefooter a.startButton {
     border: 0;
     position: relative;
     padding: 8px 32px;
-    font-size: 1.5rem;
+    font-size: 5vh;
     letter-spacing: .2em;
     border-radius: 32px;
     background: #09090b;
@@ -678,8 +891,8 @@ div.fullpagefooter a.startButton {
     position: absolute;
     top: calc(100% - 8px);
     left: calc(50% - 40px);
-    height: 80px;
-    width: 80px;
+    height: 120px;
+    width: 120px;
     background: url(/assets/images/icons/mousePointer.svg) no-repeat center;
     background-size: contain;
 }

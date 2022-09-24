@@ -40,22 +40,20 @@
   </nav>
 
   <div class="socialLinks">
-    <a href="" title="MoMaya Instagram" target="_blank" rel="noopener noreferrer">
+    <a href="" title="MoMaya Instagram" id="social1"  target="_blank" rel="noopener noreferrer">
       <lottie-player src="assets/lottie/instagram.json" background="transparent"
         speed="2" hover>
       </lottie-player>
     </a>
-    <a href="" title="MoMaya Behance" target="_blank" rel="noopener noreferrer">
+    <a href="" title="MoMaya Behance" id="social2"  target="_blank" rel="noopener noreferrer">
       <lottie-player src="assets/lottie/behance.json" background="transparent"
       speed="2" hover>
     </lottie-player>
-    <!-- <img src="/assets/images/social/behance.svg" alt="MoMaya Behance"> -->
   </a>
-  <a href="" title="MoMaya LinkedIn" target="_blank" rel="noopener noreferrer">
+  <a href="" title="MoMaya LinkedIn" id="social3" target="_blank" rel="noopener noreferrer">
       <lottie-player src="assets/lottie/vimeo.json" background="transparent"
         speed="2" hover>
       </lottie-player>
-      <!-- <img src="/assets/images/social/linkedin.svg" alt="MoMaya LinkedIn"> -->
     </a>
   </div>
   <div class="pages">
@@ -70,8 +68,8 @@
       <div class="welcomeToGax blur">
         <div class="weCreate" id="wecreate">
           <div id="js-weCreate" class="weare">
-            <div class="wearetext">
-              <lottie-player src="/assets/lottie/weare" background="transparent" speed="0.75" autoplay>
+            <div class="wearetext" id="type">
+              <lottie-player src="/assets/lottie/weare" background="transparent" speed="0.75" id="typeanim">
               </lottie-player>
             </div>
             <!-- <div class="vr_man">
@@ -80,12 +78,12 @@
               </lottie-player>
             </div> -->
           </div>
-          <div class="arrows">
-            <div class="arrowleft" cursor-class="arrow" id="arrowleft"></div>
-            <div class="arrowright" cursor-class="arrow" id="arrowright"></div>
-          </div>
           <div class="wefoot1">
-            <p id="wefoot1">WE CREATE</p>
+            <div class="arrow">
+              <div class="arrowleft" cursor-class="arrow" id="arrowleft"></div>
+              <div class="arrowright" cursor-class="arrow" id="arrowright"></div>
+            </div>
+            <p id="wefoot1text">WE CREATE</p>
           </div>
           <div class="wecreatefoot">
             <div class="wefoot2">Animation & Live Action VFX Video PRoduction for Film and Digital Content.</div>
@@ -112,6 +110,23 @@
     <section class="page">
       <div class="fullpagefooter blur" id="main_footer">
         <div class="footer">
+          <div class="socialLinksFooter">
+            <a href="" title="MoMaya Instagram" id="footsocial1" target="_blank" rel="noopener noreferrer">
+              <lottie-player src="assets/lottie/instagramblack.json" background="transparent"
+                speed="2" hover>
+              </lottie-player>
+            </a>
+            <a href="" title="MoMaya Behance" id="footsocial2" target="_blank" rel="noopener noreferrer">
+              <lottie-player src="assets/lottie/behanceblack.json" background="transparent"
+              speed="2" hover>
+            </lottie-player>
+          </a>
+          <a href="" title="MoMaya LinkedIn" id="footsocial3" target="_blank" rel="noopener noreferrer">
+              <lottie-player src="assets/lottie/vimeoblack.json" background="transparent"
+                speed="2" hover>
+              </lottie-player>
+            </a>
+          </div>
           <h5>
             prashant@momaya.com
           </h5>
@@ -120,10 +135,10 @@
         <div class="taglineParent">
           <div class="taglineBlock">
             <div class="row">
-              <span>Let's</span>
+              <span>LET'S</span>
             </div>
             <div class="row">
-              <span>Create</span>
+              <span>CREATE</span>
             </div>
           </div>
         </div>
@@ -149,6 +164,7 @@
   <script src="/assets/scripts/main.js"></script>
   <script src="/assets/scripts/navigator.js"></script>
   <script src="/assets/scripts/projects.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
   <script type="module">
     import { Application } from '/assets/scripts/spline.js';
