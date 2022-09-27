@@ -414,15 +414,18 @@ div.welcomeToGax .weCreate {
 
 @keyframes typeanim {
     0%{
-        transform: scale(0);
+        transform: translateY(100%);
+        opacity: 0;
     }
     100%{
-        transform: scale(1);
+        transform: translateY(0%);
+        opacity: 1;
     }
 }
 @keyframes hidetypeanim {
     100%{
-        transform: scale(0);
+        transform: translateY(100%);
+        opacity: 0;
     }
 }
 

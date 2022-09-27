@@ -102,6 +102,8 @@ window.onload = () => {
             if ((index != current) && !animation_state) {
                 if(current == 0 && index == 1){
                     loadTypeAnim();
+                    var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
+                    document.getElementById('hero').dispatchEvent(evt);
                 }
                 else if (current == 1 && index == 2){
                     toProjectSection();
@@ -116,6 +118,11 @@ window.onload = () => {
                 }
                 else if(current == 3){
                     loadSocialLinksAnim();
+                }
+                else if (current == 1 && index == 0){
+                    console.log(index);
+                    var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
+                    document.getElementById('hero').dispatchEvent(evt);
                 }
                 animation_state = true;
                 setTimeout(() => animation_state = false, 500);
