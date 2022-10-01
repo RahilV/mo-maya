@@ -98,6 +98,15 @@ window.onload = () => {
             document.getElementById('footsocial2').classList.remove("footersocialanim");
             document.getElementById('footsocial3').classList.remove("footersocialanim");
         }
+
+        const hideproj = () => {
+            document.getElementById('work').classList.add("hideprojects");
+            document.getElementById('work').classList.remove("showprojects");
+        }
+        const showproj = () => {
+            document.getElementById('work').classList.remove("hideprojects");
+            document.getElementById('work').classList.add("showprojects");
+        }
         const gotoNum = (index) => {
             if ((index != current) && !animation_state) {
                 if(current == 0 && index == 1){
@@ -115,9 +124,15 @@ window.onload = () => {
                 }
                 else if(current ==2 && index == 3){
                     loadFooterAnim();
+                    hideproj();
+                    setTimeout(function() {
+                        document.getElementById("nav").style.bottom = "7vh";
+                      }, 575);
                 }
-                else if(current == 3){
+                else if(current == 3 && index == 2){
+                    showproj();
                     loadSocialLinksAnim();
+                    document.getElementById("nav").style.bottom = "0";
                 }
                 else if (current == 1 && index == 0){
                     console.log(index);
