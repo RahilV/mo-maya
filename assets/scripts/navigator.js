@@ -111,8 +111,11 @@ window.onload = () => {
             if ((index != current) && !animation_state) {
                 if(current == 0 && index == 1){
                     loadTypeAnim();
-                    var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
+                    var evt = new KeyboardEvent("keydown", {
+                        bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90
+                    });
                     document.getElementById('hero').dispatchEvent(evt);
+                    document.getElementById('scrollicon').style.animation = "goaway 0.5s forwards";
                 }
                 else if (current == 1 && index == 2){
                     toProjectSection();
@@ -138,6 +141,8 @@ window.onload = () => {
                     console.log(index);
                     var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
                     document.getElementById('hero').dispatchEvent(evt);
+                    document.getElementById('scrollicon').style.animation = "comeaway 0.5s forwards";
+                    hideTypeAnim();
                 }
                 animation_state = true;
                 setTimeout(() => animation_state = false, 500);
@@ -153,8 +158,11 @@ window.onload = () => {
         const gotoNext = () => current < count - 1 ? gotoNum(current + 1) : false;
         const gotoPrev = () => current > 0 ? gotoNum(current - 1) : false;
         const btnClick = (e) => gotoNum(parseInt(e.target.dataset.slide));
-        // pages.ontouchstart = (e) => touchstart = e.touches[0].screenY;
-        pages.ontouchend = (e) => touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
+        pages.ontouchstart = (e) => touchstart = e.touches[0].screenY;
+        console.log(touchstart);
+        // pages.ontouchmove = (e) => console.log(e.changedTouches[0]);
+        pages.ontouchmove = (e) => touchstart < e.changedTouches[0].screenY ? gotoPrev() : gotoNext();
+        // console.log(ontouchmove);
         pages.onmousewheel = pages.onwheel = (e) => e.deltaY < 0 ? gotoPrev() : gotoNext();
 
         init();
