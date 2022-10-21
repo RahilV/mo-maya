@@ -8,6 +8,7 @@ window.onload = () => {
             animation_state = false;
 
         const init = () => {
+            document.getElementById('logo').style.animation = "logogo 1.2s forwards";
             slides = pages.children;
             count = slides.length;
             for (let i = 0; i < count; i++) {
@@ -116,14 +117,23 @@ window.onload = () => {
                     });
                     document.getElementById('hero').dispatchEvent(evt);
                     document.getElementById('scrollicon').style.animation = "goaway 0.5s forwards";
+                    document.getElementById('logo').style.animation = "logocome 1.2s forwards";
+                    
+                    document.getElementById('page2').style.opacity = "100%";
+                    document.getElementById('page3').style.opacity = "0%";
+                    document.getElementById('page4').style.opacity = "0%";
                 }
                 else if (current == 1 && index == 2){
                     toProjectSection();
                     hideTypeAnim();
+                    document.getElementById('page3').style.opacity = "100%";
+                    document.getElementById('page4').style.opacity = "0%";
                 }
                 else if (current == 2 && index == 1){
                     toWeCreatSection();
                     loadTypeAnim();
+                    document.getElementById('page3').style.opacity = "100%";
+                    document.getElementById('page4').style.opacity = "0%";
                 }
                 else if(current ==2 && index == 3){
                     loadFooterAnim();
@@ -131,18 +141,28 @@ window.onload = () => {
                     setTimeout(function() {
                         document.getElementById("nav").style.bottom = "7vh";
                       }, 575);
+                    document.getElementById('page2').style.opacity = "0%";
+                    document.getElementById('page3').style.opacity = "0%";
+                    document.getElementById('page4').style.opacity = "100%";
                 }
                 else if(current == 3 && index == 2){
                     showproj();
                     loadSocialLinksAnim();
                     document.getElementById("nav").style.bottom = "0";
+                    document.getElementById('page2').style.opacity = "100%";
+                    document.getElementById('page3').style.opacity = "100%";
+                    document.getElementById('page4').style.animation = "hidefooter 1s forwards";
                 }
                 else if (current == 1 && index == 0){
                     console.log(index);
                     var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
                     document.getElementById('hero').dispatchEvent(evt);
                     document.getElementById('scrollicon').style.animation = "comeaway 0.5s forwards";
+                    document.getElementById('logo').style.animation = "logogo 1.2s forwards";
                     hideTypeAnim();
+                    document.getElementById('page1').style.opacity = "100%";
+                    document.getElementById('page2').style.opacity = "0%";
+                    document.getElementById('page3  ').style.opacity = "0%";
                 }
                 animation_state = true;
                 setTimeout(() => animation_state = false, 500);
