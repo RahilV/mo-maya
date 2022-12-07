@@ -72,12 +72,17 @@ window.onload = () => {
             document.getElementById('typeanim').play();
             document.getElementById('type').classList.add("showtype");
             document.getElementById('type').classList.remove("hidetype");
+            document.getElementById('typeanim2').play();
+            document.getElementById('type2').classList.add("showtype");
+            document.getElementById('type2').classList.remove("hidetype");
         }
 
         const hideTypeAnim = () => {
             // typing animation scale up animation
             document.getElementById('type').classList.add("hidetype");
             document.getElementById('typeanim').stop();
+            document.getElementById('type2').classList.add("hidetype");
+            document.getElementById('typeanim2').stop();
         }
 
         const loadFooterAnim = () => {
