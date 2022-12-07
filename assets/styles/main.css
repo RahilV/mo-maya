@@ -520,10 +520,9 @@ div.welcomeToGax .weCreate {
 @media only screen and (max-width: 900px){
     .wearetextphone{
         visibility: visible;
-        position: fixed;
-        height: 60vh;
-        left: 12%;
-        bottom: 30%;
+        height: 80vh;
+        left: 14.5vw;
+        top: 35%;
     }
     .wearetext{
         visibility: hidden;
