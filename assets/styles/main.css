@@ -9,11 +9,11 @@ html,
 body {
     height: 100%;
     width: 100%;
-    background-color: rgb(0, 0, 0);
+    background: radial-gradient(#DA501F, #AD2B0F);
     scrollbar-width: none;
     /* Firefox */
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color:white;
+    color: white;
     overflow: hidden;
     overscroll-behavior: none;
 }
@@ -28,7 +28,7 @@ header {
     top: 0;
     left: 0;
     right: 0;
-    padding: 24px 40px 16px;
+    padding: 2px 20px 6px;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -124,41 +124,46 @@ body.menuOpen nav {
 }
 
 header .momaya .logo {
-    width: 56px;
+    width: 86px;
 }
 
 @keyframes logogo {
-    0%{
+    0% {
         scale: 1;
     }
-    20%{
+
+    20% {
         opacity: 100%;
     }
-    100%{
+
+    100% {
         scale: 0;
         opacity: 0%;
         visibility: hidden;
         filter: blur(8px);
     }
 }
+
 @keyframes logocome {
-    0%{
+    0% {
         scale: 0;
         opacity: 0%;
         visibility: hidden;
     }
-    50%{
+
+    50% {
         opacity: 0%;
         filter: blur(8px);
         visibility: visible;
     }
-    100%{
+
+    100% {
         scale: 1;
         opacity: 100%;
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     header {
         position: fixed;
         z-index: 100;
@@ -170,11 +175,13 @@ header .momaya .logo {
         align-items: center;
         justify-content: center;
     }
+
     .menu {
         visibility: hidden;
     }
+
     header .momaya .logo {
-        margin-left: 40px;
+        /* margin-left: 40px; */
         width: 56px;
     }
 }
@@ -279,6 +286,7 @@ nav .navFooter img.logo {
         z-index: 100;
     }
 }
+
 @media only screen and (max-width: 500px) {
     .socialLinks {
         display: flex;
@@ -294,28 +302,31 @@ nav .navFooter img.logo {
 .socialLinks a {
     padding: 6px;
     margin: 6px 6px;
-        width: 40px;
+    width: 40px;
 }
 
-.fallanimation{
+.fallanimation {
     animation: fallanim 1s forwards;
 }
 
-.raiseanimation{
+.raiseanimation {
     animation: raiseanim 1s forwards;
 }
+
 @keyframes fallanim {
-    100%{
+    100% {
         transform: translate3d(0, 200px, 0) rotate3d(0, 0, 1, -90deg);
         opacity: 0;
     }
 }
+
 @keyframes raiseanim {
-    0%{
+    0% {
         transform: translate3d(0, 200px, 0) rotate3d(0, 0, 1, -90deg);
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -326,7 +337,7 @@ nav .navFooter img.logo {
     transition: transform .3s cubic-bezier(.48, -.07, .52, 1.79);
 }
 
-.socialLinksFooter{
+.socialLinksFooter {
     display: flex;
     align-items: start;
     position: fixed;
@@ -348,16 +359,17 @@ nav .navFooter img.logo {
     transition: transform .3s cubic-bezier(.48, -.07, .52, 1.79);
 }
 
-.footersocialanim{
+.footersocialanim {
     animation: addicon 1s forwards;
 }
 
 @keyframes addicon {
-    0%{
+    0% {
         transform: translate3d(0, 200px, 0) rotate3d(0, 0, 0, 0deg);
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
@@ -424,7 +436,7 @@ div.hero .mouseIcon {
 }
 
 
-@media only screen and (max-width: 500px){
+@media only screen and (max-width: 500px) {
     div.hero .mouseIcon {
         opacity: .7;
         width: 20px;
@@ -437,7 +449,7 @@ div.hero .mouseIcon {
     }
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     div.hero .mouseIcon {
         opacity: .7;
         width: 20px;
@@ -501,7 +513,7 @@ div.welcomeToGax .weCreate {
     z-index: -1;
 }
 
-@media only screen and (min-width: 900px){
+@media only screen and (min-width: 900px) {
     .wearetext {
         visibility: visible;
         position: fixed;
@@ -509,138 +521,151 @@ div.welcomeToGax .weCreate {
         left: 10%;
         bottom: 30%;
     }
+
     .wearetext lottie-player {
         src: "/assets/lottie/we_are_MO-MAYA_WEB.json"
     }
-    .wearetextphone{
+
+    .wearetextphone {
         visibility: hidden;
     }
 }
 
-@media only screen and (max-width: 900px){
-    .wearetextphone{
+@media only screen and (max-width: 900px) {
+    .wearetextphone {
         visibility: visible;
         height: 80vh;
         left: 14.5vw;
         top: 35%;
     }
-    .wearetext{
+
+    .wearetext {
         visibility: hidden;
     }
+
     .wearetextphone lottie-player {
         src: "/assets/lottie/we_are_MO-MAYA_PHONE.json"
     }
 }
 
-.showtype{
+.showtype {
     animation: typeanim 1s forwards;
 }
-.hidetype{
+
+.hidetype {
     animation: hidetypeanim 1s forwards;
 }
 
 @keyframes typeanim {
-    0%{
+    0% {
         transform: translateY(100%);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateY(0%);
         opacity: 1;
     }
 }
+
 @keyframes hidetypeanim {
-    100%{
+    100% {
         transform: translateY(100%);
         opacity: 0;
     }
 }
 
-.wecreatefoot{
+.wecreatefoot {
     position: relative;
-    display:flex;
-    align-items:center;
+    display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     font-family: 'Plus Jakarta Sans', sans-serif;
-    color:white;
+    color: white;
     padding-bottom: 20px;
 }
 
 .wefoot1 {
     position: relative;
     text-align: center;
-    width:100%;
+    width: 100%;
     padding-bottom: 3vh;
     font-size: 4.5vh;
     font-weight: 500;
 }
 
-@media only screen and (max-width: 400px){
-    .wecreatefoot{
+@media only screen and (max-width: 400px) {
+    .wecreatefoot {
         position: relative;
-        display:flex;
-        align-items:center;
+        display: flex;
+        align-items: center;
         justify-content: center;
         flex-direction: column;
         font-family: 'Plus Jakarta Sans', sans-serif;
-        color:white;
+        color: white;
         padding-bottom: 30px;
     }
+
     .wefoot1 {
         position: relative;
         text-align: center;
-        width:100%;
+        width: 100%;
         padding-bottom: 3vh;
         font-size: 2.5vh;
         font-weight: 500;
     }
 }
-@media only screen and (max-width: 600px){
-    .wecreatefoot{
+
+@media only screen and (max-width: 600px) {
+    .wecreatefoot {
         position: relative;
-        display:flex;
-        align-items:center;
+        display: flex;
+        align-items: center;
         justify-content: center;
         flex-direction: row;
         font-family: 'Plus Jakarta Sans', sans-serif;
-        color:white;
+        color: white;
         padding-bottom: 85px;
         margin-left: 50px;
         margin-right: 50px;
     }
+
     .wefoot1 {
         position: relative;
         text-align: center;
-        width:100%;
+        width: 100%;
         padding-bottom: 3vh;
         font-size: 2.5vh;
         font-weight: 600;
     }
 }
 
-.animate{
+.animate {
     animation: scrollanim 0.8s forwards;
 }
 
-.unanimate{
+.unanimate {
     animation: scrollbackanim 0.8s forwards;
 }
 
-@media only screen and (max-width: 600px){
-    .animate{
+@media only screen and (max-width: 600px) {
+    .animate {
         animation: scrollanimphone 0.8s forwards;
     }
-    .unanimate{
+
+    .unanimate {
         animation: scrollbackanimphone 0.8s forwards;
     }
 }
+
 @keyframes scrollanim {
-    0%{
+    0% {
         padding-bottom: 3vh;
         font-size: 4.5vh;
         font-weight: 500;
     }
+
     100% {
         padding-bottom: 64.5vh;
         font-size: 6vh;
@@ -654,6 +679,7 @@ div.welcomeToGax .weCreate {
         font-size: 6vh;
         font-weight: 600;
     }
+
     100% {
         padding-bottom: 3vh;
         font-size: 4.5vh;
@@ -662,11 +688,12 @@ div.welcomeToGax .weCreate {
 }
 
 @keyframes scrollanimphone {
-    0%{
+    0% {
         padding-bottom: 3vh;
         font-size: 2.5vh;
         font-weight: 600;
     }
+
     100% {
         padding-bottom: 59.5vh;
         font-size: 4vh;
@@ -680,6 +707,7 @@ div.welcomeToGax .weCreate {
         font-size: 4vh;
         font-weight: 600;
     }
+
     100% {
         padding-bottom: 3vh;
         font-size: 2.5vh;
@@ -689,18 +717,20 @@ div.welcomeToGax .weCreate {
 
 .wefoot2 {
     position: sticky;
-    bottom:0;
+    bottom: 0;
     text-align: center;
-    width:100%;
+    width: 100%;
     padding-bottom: 3vh;
     font-size: 1.85vh;
 }
+
 @supports (backdrop-filter: none) {
     .blur {
         background-color: rgba(0, 0, 0, 0);
         -webkit-backdrop-filter: blur(1px);
         backdrop-filter: blur(1px);
     }
+
     .moreblur {
         background-color: rgba(0, 0, 0, 0);
         -webkit-backdrop-filter: blur(2px);
@@ -712,30 +742,33 @@ div.projects {
     padding: 280px 0 100px;
 }
 
-.hideprojects{
+.hideprojects {
     animation: goaway 1s forwards;
 }
 
-.showprojects{
+.showprojects {
     animation: comeaway 1s forwards;
 }
 
 @keyframes goaway {
-    100%{
+    100% {
         transform: translateY(-100%);
         opacity: 0;
     }
 }
+
 @keyframes comeaway {
-    0%{
+    0% {
         transform: translateY(-100%);
         opacity: 0;
     }
-    100%{
+
+    100% {
         transform: translateY(0%);
         opacity: 1;
     }
 }
+
 div.projects .projectsHeader {
     display: flex;
     align-items: center;
@@ -790,123 +823,201 @@ div.projects .projectsHeader h4::after {
     /* background: linear-gradient(to right, rgba(9, 9, 11, 0) 0, #09090b4d 100%); */
 }
 
-.projarrowanim{
+.projarrowanim {
     animation: projectanimation 1.2s forwards;
 }
-.projarrowunanim{
+
+.projarrowunanim {
     animation: projectunanimation 1s forwards;
 }
 
 @keyframes projectanimation {
-    0%{
+    0% {
         opacity: 0;
     }
-    90%{
+
+    90% {
         opacity: 0;
     }
-    100%{
+
+    100% {
         opacity: 1;
     }
 }
 
 @keyframes projectunanimation {
-    1%{
+    1% {
         opacity: 0;
     }
 }
 
 .arrowright {
     position: fixed;
-    width:100%;
-    height:6vh;
-    left:9vw;
+    width: 100%;
+    height: 6vh;
+    left: 9vw;
     background: url(/assets/images/icons/arrowsmall.svg) no-repeat center;
     animation: pulseright 2s linear infinite;
 }
 
 @keyframes pulseright {
-    0% { transform: translate(1px) }
-    10% { transform: translate(-1px)  }
-    20% { transform: translate(-3px)  }
-    30% { transform: translate(3px)  }
-    40% { transform: translate(1px)  }
-    50% { transform: translate(-1px)  }
-    60% { transform: translate(-3px)  }
-    70% { transform: translate(3px)  }
-    80% { transform: translate(-1px)  }
-    90% { transform: translate(1px)  }
-    100% { transform: translate(1px)  }
+    0% {
+        transform: translate(1px)
+    }
+
+    10% {
+        transform: translate(-1px)
+    }
+
+    20% {
+        transform: translate(-3px)
+    }
+
+    30% {
+        transform: translate(3px)
+    }
+
+    40% {
+        transform: translate(1px)
+    }
+
+    50% {
+        transform: translate(-1px)
+    }
+
+    60% {
+        transform: translate(-3px)
+    }
+
+    70% {
+        transform: translate(3px)
+    }
+
+    80% {
+        transform: translate(-1px)
+    }
+
+    90% {
+        transform: translate(1px)
+    }
+
+    100% {
+        transform: translate(1px)
+    }
 
 }
 
 .arrowleft {
     position: fixed;
-    width:100%;
-    height:6vh;
-    right:9vw;
+    width: 100%;
+    height: 6vh;
+    right: 9vw;
     background: url(/assets/images/icons/arrowsmall.svg) no-repeat center;
     transform: rotate(180deg);
     animation: pulseleft 2s linear infinite;
 }
-@media only screen and (max-width: 400px){
-    .arrowleft{
-        right:16vw;
+
+@media only screen and (max-width: 400px) {
+    .arrowleft {
+        right: 16vw;
         height: 3.5vh;
     }
-    .arrowright{
-        left:16vw;
-        height: 3.5vh;
-    }
-}
-@media only screen and (max-width: 600px){
-    .arrowleft{
-        right:19vw;
-        height: 3.5vh;
-    }
-    .arrowright{
-        left:19vw;
+
+    .arrowright {
+        left: 16vw;
         height: 3.5vh;
     }
 }
+
+@media only screen and (max-width: 600px) {
+    .arrowleft {
+        right: 19vw;
+        height: 3.5vh;
+    }
+
+    .arrowright {
+        left: 19vw;
+        height: 3.5vh;
+    }
+}
+
 @keyframes pulseleft {
-    0% { transform: translate(-1px)   rotate(180deg)}
-    10% { transform: translate(1px) rotate(180deg) }
-    20% { transform: translate(3px) rotate(180deg) }
-    30% { transform: translate(-3px)  rotate(180deg)}
-    40% { transform: translate(-1px)  rotate(180deg)}
-    50% { transform: translate(1px) rotate(180deg) }
-    60% { transform: translate(3px) rotate(180deg) }
-    70% { transform: translate(-3px)  rotate(180deg)}
-    80% { transform: translate(1px) rotate(180deg) }
-    90% { transform: translate(-1px)  rotate(180deg)}
-    100% { transform: translate(-1px) rotate(180deg) }
+    0% {
+        transform: translate(-1px) rotate(180deg)
+    }
+
+    10% {
+        transform: translate(1px) rotate(180deg)
+    }
+
+    20% {
+        transform: translate(3px) rotate(180deg)
+    }
+
+    30% {
+        transform: translate(-3px) rotate(180deg)
+    }
+
+    40% {
+        transform: translate(-1px) rotate(180deg)
+    }
+
+    50% {
+        transform: translate(1px) rotate(180deg)
+    }
+
+    60% {
+        transform: translate(3px) rotate(180deg)
+    }
+
+    70% {
+        transform: translate(-3px) rotate(180deg)
+    }
+
+    80% {
+        transform: translate(1px) rotate(180deg)
+    }
+
+    90% {
+        transform: translate(-1px) rotate(180deg)
+    }
+
+    100% {
+        transform: translate(-1px) rotate(180deg)
+    }
 
 }
 
-.arrowleftanimate{
+.arrowleftanimate {
     animation: arrowleftanim 1s forwards;
 }
-.arrowleftunanimate{
+
+.arrowleftunanimate {
     animation: arrowleftunanim 1s forwards;
 }
-.arrowrightanimate{
+
+.arrowrightanimate {
     animation: arrowrightanim 1s forwards;
 }
-.arrowrightunanimate{
+
+.arrowrightunanimate {
     animation: arrowrightunanim 1s forwards;
 }
 
 @keyframes arrowleftanim {
-    0%{
+    0% {
         margin-top: 0;
     }
-    50%{
+
+    50% {
         margin-top: 38vh;
     }
-    99%{
+
+    99% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         margin-top: 36vh;
         margin-right: 38vw;
         opacity: 0;
@@ -914,26 +1025,30 @@ div.projects .projectsHeader h4::after {
 }
 
 @keyframes arrowleftunanim {
-    0%{
+    0% {
         margin-top: 38vh;
         margin-right: 36vw;
     }
-    100%{
+
+    100% {
         margin-top: 0;
     }
 }
 
 @keyframes arrowrightanim {
-    0%{
+    0% {
         margin-top: 0;
     }
-    50%{
+
+    50% {
         margin-top: 38vh;
     }
-    99%{
+
+    99% {
         opacity: 1;
     }
-    100%{
+
+    100% {
         margin-top: 36vh;
         margin-left: 38vw;
         opacity: 0;
@@ -941,11 +1056,12 @@ div.projects .projectsHeader h4::after {
 }
 
 @keyframes arrowrightunanim {
-    0%{
+    0% {
         margin-top: 38vh;
         margin-left: 36vw;
     }
-    100%{
+
+    100% {
         margin-top: 0;
         opacity: 1;
     }
@@ -995,18 +1111,19 @@ div.projects .projectsHeader h4::after {
     width: 100%;
     height: 40vh;
     justify-content: center;
-    perspective: 300px; 
+    perspective: 300px;
 }
 
-.projactive{
+.projactive {
     animation: projlistanim 1s forwards;
 }
 
 @keyframes projlistanim {
-    0%{
+    0% {
         transform: scale(0);
     }
-    100%{
+
+    100% {
         transform: scale(1);
     }
 }
@@ -1025,7 +1142,7 @@ div.projects .projectsHeader h4::after {
     transition: all 0.3s ease-in;
 }
 
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {
     .carousel {
         display: flex;
         width: 100%;
@@ -1035,6 +1152,7 @@ div.projects .projectsHeader h4::after {
         opacity: 0;
         animation: appear 1.2s forwards;
     }
+
     .carousel__list {
         display: flex;
         list-style: none;
@@ -1043,8 +1161,9 @@ div.projects .projectsHeader h4::after {
         height: 40vh;
         justify-content: center;
         perspective: 300px;
-        padding-bottom: 140px; 
+        padding-bottom: 140px;
     }
+
     .carousel__item {
         display: flex;
         align-items: center;
@@ -1059,7 +1178,8 @@ div.projects .projectsHeader h4::after {
         transition: all 0.3s ease-in;
     }
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     .carousel {
         display: flex;
         width: 100%;
@@ -1069,6 +1189,7 @@ div.projects .projectsHeader h4::after {
         opacity: 0;
         animation: appear 1.2s forwards;
     }
+
     .carousel__list {
         display: flex;
         list-style: none;
@@ -1076,8 +1197,9 @@ div.projects .projectsHeader h4::after {
         width: 100%;
         height: 40vh;
         justify-content: center;
-        perspective: 300px; 
+        perspective: 300px;
     }
+
     .carousel__item {
         display: flex;
         align-items: center;
@@ -1177,32 +1299,35 @@ div.fullpagefooter .taglineParent .taglineBlock {
     margin-top: 20%;
 }
 
-#lets{
+#lets {
     margin-right: 5vw;
 }
 
-#create{
-    margin-left:10vw;
+#create {
+    margin-left: 10vw;
 }
 
-@media only screen and (max-width: 600px){
+@media only screen and (max-width: 600px) {
     div.fullpagefooter .taglineParent {
         display: flex;
         justify-content: center;
         margin-top: 30%;
     }
+
     div.fullpagefooter .taglineParent .taglineBlock {
         font-size: 17vw;
         z-index: 3;
         font-weight: 800;
         margin-top: 20%;
     }
-    #lets{
+
+    #lets {
         margin-right: 0vw;
-        margin-left:8vw;
+        margin-left: 8vw;
     }
-    #create{
-        margin-left:0vw;
+
+    #create {
+        margin-left: 0vw;
     }
 }
 
@@ -1216,25 +1341,25 @@ div.fullpagefooter .footer {
     width: 100%;
     height: 7vh;
     background-color: rgb(255, 255, 255);
-    color:#000000;
+    color: #000000;
     z-index: 9999;
 }
 
-div.fullpagefooter .footer h4{
-    margin-right:2%;
+div.fullpagefooter .footer h4 {
+    margin-right: 2%;
 }
 
-div.fullpagefooter .footer h4 a{
-    color:black;
+div.fullpagefooter .footer h4 a {
+    color: black;
 }
 
-div.fullpagefooter .footer h4 a:hover{
-    color:#e24c1e;
+div.fullpagefooter .footer h4 a:hover {
+    color: #e24c1e;
     cursor: pointer;
 }
 
 /* footer resoponsive code */
-@media only screen and (max-width: 400px){
+@media only screen and (max-width: 400px) {
     div.fullpagefooter .footer {
         position: fixed;
         display: flex;
@@ -1244,32 +1369,38 @@ div.fullpagefooter .footer h4 a:hover{
         width: 100%;
         height: 15vh;
         background-color: rgb(255, 255, 255);
-        color:#000000;
+        color: #000000;
         z-index: 9999;
     }
-    div.fullpagefooter .footer h4{
-        margin-right:2%;
+
+    div.fullpagefooter .footer h4 {
+        margin-right: 2%;
         margin-top: 6%;
     }
-    div.fullpagefooter .footer h4 a{
-        color:black;
+
+    div.fullpagefooter .footer h4 a {
+        color: black;
     }
-    div.fullpagefooter .footer h4 a:hover{
-        color:#e24c1e;
+
+    div.fullpagefooter .footer h4 a:hover {
+        color: #e24c1e;
         cursor: pointer;
     }
+
     .socialLinksFooter a {
         padding: 2px;
         margin: 2px 2px;
         width: 100px;
     }
+
     .socialLinksFooter a img {
         height: 5px;
         will-change: transform;
         transition: transform .3s cubic-bezier(.48, -.07, .52, 1.79);
     }
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     div.fullpagefooter .footer {
         position: fixed;
         display: flex;
@@ -1279,20 +1410,24 @@ div.fullpagefooter .footer h4 a:hover{
         width: 100%;
         height: 15vh;
         background-color: rgb(255, 255, 255);
-        color:#000000;
+        color: #000000;
         z-index: 9999;
     }
-    div.fullpagefooter .footer h4{
-        margin-right:2%;
+
+    div.fullpagefooter .footer h4 {
+        margin-right: 2%;
         margin-top: 6%;
     }
-    div.fullpagefooter .footer h4 a{
-        color:black;
+
+    div.fullpagefooter .footer h4 a {
+        color: black;
     }
-    div.fullpagefooter .footer h4 a:hover{
-        color:#e24c1e;
+
+    div.fullpagefooter .footer h4 a:hover {
+        color: #e24c1e;
         cursor: pointer;
     }
+
     .socialLinksFooter a {
         padding: 6px;
         margin: 6px 2px;
@@ -1356,11 +1491,13 @@ button[type=submit].startButton .mousePointer {
     background: url(/assets/images/general/mousePointerPink.svg) no-repeat center;
     background-size: contain;
 }
-@media only screen and (max-width: 480px){
+
+@media only screen and (max-width: 480px) {
     div.fullpagefooter a.startButton {
         position: absolute;
         top: 340px;
     }
+
     .startButton {
         text-transform: uppercase;
         -webkit-appearance: none;
@@ -1376,6 +1513,7 @@ button[type=submit].startButton .mousePointer {
         left: 25vw;
         width: 120px;
     }
+
     .startButton .mousePointer {
         position: absolute;
         top: calc(100% - 8px);
@@ -1386,11 +1524,13 @@ button[type=submit].startButton .mousePointer {
         background-size: contain;
     }
 }
-@media only screen and (max-width: 600px){
+
+@media only screen and (max-width: 600px) {
     div.fullpagefooter a.startButton {
         position: absolute;
         top: 420px;
     }
+
     .startButton {
         text-transform: uppercase;
         -webkit-appearance: none;
@@ -1408,6 +1548,7 @@ button[type=submit].startButton .mousePointer {
         text-decoration: none;
         width: 160px;
     }
+
     .startButton .mousePointer {
         position: absolute;
         top: calc(100% - 8px);
@@ -1418,6 +1559,7 @@ button[type=submit].startButton .mousePointer {
         background-size: contain;
     }
 }
+
 .localisation {
     position: absolute;
     left: -40px;
@@ -1430,21 +1572,48 @@ button[type=submit].startButton .mousePointer {
 }
 
 @keyframes hidefooter {
-    0%{
+    0% {
         opacity: 100%;
     }
-    100%{
+
+    100% {
         opacity: 0%;
         transform: translateY(300px);
     }
 }
+
 @keyframes showfooter {
-    0%{
+    0% {
         opacity: 0%;
         transform: translateY(200px);
     }
-    100%{
+
+    100% {
         opacity: 100%;
         transform: translateY(0px);
     }
+}
+
+.loading {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    z-index: 100;
+    animation: fadeOut 2s forwards;
+    animation-delay: 3s;
+}
+
+.loading .logo{
+    margin-top: 12.5%;
+    height: 500px;
+}
+
+@keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+}
+
+@keyframes fadeIn {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
 }
