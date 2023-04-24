@@ -120,29 +120,34 @@ window.onload = () => {
             if ((index != current) && !animation_state) {
                 if(current == 0 && index == 1){
                     loadTypeAnim();
-                    var evt = new KeyboardEvent("keydown", {
-                        bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90
-                    });
-                    document.getElementById('hero').dispatchEvent(evt);
                     document.getElementById('scrollicon').style.animation = "goaway 0.5s forwards";
                     document.getElementById('logo').style.animation = "logocome 1.2s forwards";
+                    document.getElementById('page1').style.visibility = "hidden";
                     document.getElementById('page2').style.visibility = "visible";
+                    document.getElementById('page3').style.visibility = "hidden";
+                    document.getElementById('page4').style.visibility = "hidden";
+
+                    let evt = new KeyboardEvent("keydown", {
+                        bubbles : true, cancelable : false, key : "z", shiftKey : true, keyCode : 90
+                    });
+                    let evt2 = new KeyboardEvent("keyup", {
+                        bubbles : true, cancelable : false, key : "z", shiftKey : true, keyCode : 90
+                    });
+
+                    document.getElementById('page1').dispatchEvent(evt);
+                    document.getElementById('page1').dispatchEvent(evt2);
                 }
                 else if (current == 1 && index == 2){
                     toProjectSection();
                     hideTypeAnim();
                     document.getElementById('page3').style.visibility = "visible";
                 }
-                else if (current == 2 && index == 1){
-                    toWeCreatSection();
-                    loadTypeAnim();
-                }
                 else if(current ==2 && index == 3){
                     loadFooterAnim();
                     hideproj();
                     setTimeout(function() {
                         document.getElementById("nav").style.bottom = "7vh";
-                      }, 575);
+                    }, 575);
                     document.getElementById('page2').style.visibility = "hidden";
                     document.getElementById('page3').style.visibility = "hidden";
                     document.getElementById('page4').style.visibility = "visible";
@@ -156,13 +161,26 @@ window.onload = () => {
                     document.getElementById('page3').style.visibility = "visible";
                     document.getElementById('footer').style.animation = "hidefooter 1s forwards"
                 }
+                else if (current == 2 && index == 1){
+                    toWeCreatSection();
+                    loadTypeAnim();
+                }
                 else if (current == 1 && index == 0){
-                    console.log(index);
-                    var evt = new KeyboardEvent("keydown", {bubbles : true, cancelable : true, key : "z", shiftKey : true, keyCode : 90});
-                    document.getElementById('hero').dispatchEvent(evt);
                     document.getElementById('scrollicon').style.animation = "comeaway 0.5s forwards";
                     document.getElementById('logo').style.animation = "logogo 1.2s forwards";
-                    hideTypeAnim();
+                    document.getElementById('page2').style.visibility = "hidden";
+                    document.getElementById('page3').style.visibility = "hidden";
+                    document.getElementById('page1').style.visibility = "visible";
+
+                    let evt = new KeyboardEvent("keydown", {
+                        bubbles : true, cancelable : false, key : "z", shiftKey : true, keyCode : 90
+                    });
+                    let evt2 = new KeyboardEvent("keyup", {
+                        bubbles : true, cancelable : false, key : "z", shiftKey : true, keyCode : 90
+                    });
+
+                    document.getElementById('page1').dispatchEvent(evt);
+                    document.getElementById('page1').dispatchEvent(evt2);
                 }
                 animation_state = true;
                 setTimeout(() => animation_state = false, 500);
@@ -174,7 +192,6 @@ window.onload = () => {
                 }
             }
         }
-
         const gotoNext = () => current < count - 1 ? gotoNum(current + 1) : false;
         const gotoPrev = () => current > 0 ? gotoNum(current - 1) : false;
         const btnClick = (e) => gotoNum(parseInt(e.target.dataset.slide));
