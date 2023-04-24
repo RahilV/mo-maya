@@ -171,7 +171,7 @@ window.onload = () => {
                     document.getElementById('page2').style.visibility = "hidden";
                     document.getElementById('page3').style.visibility = "hidden";
                     document.getElementById('page1').style.visibility = "visible";
-
+                    hideTypeAnim();
                     let evt = new KeyboardEvent("keydown", {
                         bubbles : true, cancelable : false, key : "z", shiftKey : true, keyCode : 90
                     });
