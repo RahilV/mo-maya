@@ -192,18 +192,22 @@
     const app = new Application(canvas);
     app.load('/assets/spline/new2.splinecode');
     // app.load('https://prod.spline.design/o9XsvDi-l1EMcAu9/scene.splinecode');
+    setLodingTime(app.time)
   </script>
   <script>
     document.getElementById('hero').style.visibility = "hidden";
-    setTimeout(hideLoader, 4000)
-    function hideLoader(){
-      // document.getElementById('loading').style.position = "relative";
-      document.getElementById('loading').style.width = "1px";
-      document.getElementById('hero').style.visibility = "visible";
-    }
-
-    function goToWork(){
-      
+    function setLodingTime(time){
+      if (time > 4000){
+        setTimeout(hideLoader, time+1000)
+      }
+      else{
+        setTimeout(hideLoader, 4000)
+      }
+      function hideLoader(){
+        // document.getElementById('loading').style.position = "relative";
+        document.getElementById('loading').style.width = "1px";
+        document.getElementById('hero').style.visibility = "visible";
+      }
     }
   </script>
 </body>
